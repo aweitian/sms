@@ -16,11 +16,13 @@ class Send
 
     protected $params = array();
     public $msg;
-    public function __construct($accessKeyId,$accessKeySecret)
+    public $log = null;
+
+    public function __construct($accessKeyId, $accessKeySecret, $log_path = null)
     {
         $this->accessKeyId = $accessKeyId;
         $this->accessKeySecret = $accessKeySecret;
-
+        $this->log = $log_path;
     }
 
 
@@ -104,7 +106,6 @@ class Send
     //  [Code] => OK
     //]
     /**
-     * @param $PhoneNumbers
      * @return bool
      */
     public function send()
@@ -140,6 +141,11 @@ class Send
                 "Version" => "2017-05-25",
             ))
         );
+        if (!is_null($this->log) && file_exists($this->log) && is_writable($this->log)) {
+            file_put_contents($this->log, json_encode($content), FILE_APPEND);
+        } else {
+            $this->log = $content;
+        }
         $this->msg = $content['Message'];
         return $content['Code'] == "OK";
     }
