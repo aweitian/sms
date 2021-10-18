@@ -5,7 +5,7 @@ composer require aweitian/sms
 
 ## 单条测试
 ```
-$test = new \Aw\Sms\Ali\Send('LTA...YtG','UImf5c0Pmwl7iCz6xTh0B84YWfdaIm');
+$test = new \Aw\Sms\Ali\Send('LTA...YtG','UImf5*******aIm');
 $test->setPhoneNumber("136........");
 $test->setSignName("田AW");
 $test->setTemplateCode("SMS_125015333");
