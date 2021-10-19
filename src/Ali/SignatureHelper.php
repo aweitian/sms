@@ -82,7 +82,7 @@ class SignatureHelper
 
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 5);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             "x-sdk-client" => "php/2.0.0"
         ));

@@ -151,8 +151,8 @@ class AliTest extends PHPUnit_Framework_TestCase
 
         // 此处可能会抛出异常，注意catch
         $content = $helper->request(
-            'LT***naqE',
-            'SuOU********VFgIxi',
+            'LT*******qE',
+            'SuOUb6**********KVFgIxi',
             "dysmsapi.aliyuncs.com",
             array_merge($params, array(
                 "RegionId" => "cn-hangzhou",
